@@ -1,0 +1,59 @@
+@keyframes blink {
+  0% {
+    position: absolute;
+    top: 240px;
+    left: 150px;
+  }
+  50% {
+    position: absolute;
+    top: 240px;
+    left: 145px;
+    height:0px;
+    width:100px;
+  }
+  100% {
+    position: absolute;
+    top: 240px;
+    left: 150px;
+  }
+}
+
+.eyes {
+  height: 100px;
+  width: 80px;
+  position: fixed;
+  top: -150px;
+  left: 75px;
+  color: blue;
+  /*background-color: currentcolor; */
+  border-radius: 100%;
+  /* x-offset, y-offset, blur, spread, color */
+  box-shadow:
+    150px 240px 0 0 currentColor,
+    330px 240px 0 0 currentColor;
+}
+
+.eyes::before {
+  content: "";
+  height: 100px;
+  width: 80px;
+  position:fixed;
+  top: inherit;
+  left: inherit;
+  background-color: white;
+  border-radius: 10% 10% 50% 50%;
+  animation-name: blink;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.eyes::after {
+  content: "";
+  height: 200px;
+  width: 170px;
+  position:absolute;
+  top: 200px;
+  left: 280px;
+  border: 8px solid black;
+  border-radius: 100%;
+}
